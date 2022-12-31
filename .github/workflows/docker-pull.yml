@@ -1,0 +1,17 @@
+name: Docker pull
+
+on:
+  schedule:
+    - cron: '15 * * * *'
+  push:
+    branches: 
+      - 'main'
+  workflow_dispatch:
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - 
+        name: Pull docker image
+        run: docker pull tmvdl/projects:sucht
