@@ -11,9 +11,9 @@ services:
       - '80:3000'
 
   app:
+    image: 'app'
     build: './src/app'
     volumes:
       - './src/app:/app'
-      - './src/www/src:/app/src'
     ports:
       - '3000:3000'
