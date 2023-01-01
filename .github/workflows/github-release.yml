@@ -15,10 +15,10 @@ jobs:
       - name: Check out
         uses: actions/checkout@v3
 
-      - name: Pull project
-        run: bash env/pull.sh 
-        env:
-          GH_TOKEN: ${{ github.token }}
+      # - name: Pull project
+      #   run: bash env/pull.sh 
+      #   env:
+      #     GH_TOKEN: ${{ github.token }}
 
       - name: Install project
         run: bash env/install.sh 
