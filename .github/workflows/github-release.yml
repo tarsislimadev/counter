@@ -20,8 +20,8 @@ jobs:
       #   env:
       #     GH_TOKEN: ${{ github.token }}
 
-      - name: Install project
-        run: bash env/install.sh 
+      # - name: Install project
+      #   run: bash env/install.sh 
 
       - name: Build app
         run: docker-compose build app
