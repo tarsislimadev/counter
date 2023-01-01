@@ -1,0 +1,6 @@
+[submodule "src/www"]
+	path = src/www
+	url = git@github.com:brtmvdl/plus-www.git
+[submodule "src/app"]
+	path = src/app
+	url = git@github.com:brtmvdl/plus-app.git
