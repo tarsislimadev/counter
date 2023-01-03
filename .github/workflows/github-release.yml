@@ -14,8 +14,6 @@ jobs:
     steps:
       - name: Check out
         uses: actions/checkout@v3
-        env:
-          submodules: 'recursive'
 
       - name: Install www
         run: docker-compose run www npm i
@@ -25,6 +23,9 @@ jobs:
 
       - name: Build app
         run: docker-compose build app
+
+      - name: List files
+        run: ls -la
 
       - name: Export app
         run: docker run -v $(pwd)/dist:/dist -w /dist app cp /app/hello/platforms/android/app/build/outputs/apk/debug/*.apk . 
