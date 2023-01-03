@@ -19,6 +19,9 @@ jobs:
           username: tmvdl
           password: ${{ secrets.GITHUBDOCKER }}
 
+      - name: Pull app 
+        run: bash env/pull.sh
+
       - name: Build app 
         run: docker-compose build www
 
