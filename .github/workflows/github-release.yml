@@ -17,13 +17,11 @@ jobs:
         env:
           submodules: 'recursive'
 
-      # - name: Pull project
-      #   run: bash env/pull.sh 
-      #   env:
-      #     GH_TOKEN: ${{ github.token }}
+      - name: Install www
+        run: docker-compose run www npm i
 
-      # - name: Install project
-      #   run: bash env/install.sh 
+      - name: Build www
+        run: docker-compose run www npm run build
 
       - name: Build app
         run: docker-compose build app
@@ -35,4 +33,3 @@ jobs:
         run: gh release create v$( date +%Y%m%d%H%M ) ./dist/*.apk
         env:
             GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
