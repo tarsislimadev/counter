@@ -1,0 +1,9 @@
+.square {
+  background-color: red;
+  border-radius: 50%;
+  color: white;
+  line-height: 25vw;
+  margin: 0 auto;
+  height: 25vw;
+  width: 25vw;
+}
