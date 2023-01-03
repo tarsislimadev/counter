@@ -3,6 +3,7 @@ version: '3'
 services:
 
   www:
+    image: 'tmvdl/projects:plus'
     restart: 'always'
     build: './src/www'
     volumes:
