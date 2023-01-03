@@ -13,8 +13,4 @@ services:
 
   app:
     image: 'app'
-    build: './src/app'
-    volumes:
-      - './src/app:/app'
-    ports:
-      - '3000:3000'
+    build: './src'
