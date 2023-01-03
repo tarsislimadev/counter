@@ -8,7 +8,7 @@ WORKDIR /app/hello
 
 RUN cordova platform add android
 
-COPY ./src/www/build www
+COPY ./www/build www
 
 RUN cordova build android
 
