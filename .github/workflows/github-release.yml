@@ -25,7 +25,7 @@ jobs:
         run: docker-compose build app
 
       - name: List files
-        run: ls -la
+        run: ls -laR
 
       - name: Export app
         run: docker run -v $(pwd)/dist:/dist -w /dist app cp /app/hello/platforms/android/app/build/outputs/apk/debug/*.apk . 
