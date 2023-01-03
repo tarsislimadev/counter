@@ -20,7 +20,7 @@ jobs:
           password: ${{ secrets.GITHUBDOCKER }}
 
       - name: Pull app 
-        run: bash env/pull.sh
+        run: git clone git@github.com:brtmvdl/plus-www.git ./src/www
 
       - name: Build app 
         run: docker-compose build www
