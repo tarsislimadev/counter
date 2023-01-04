@@ -19,10 +19,7 @@ jobs:
           username: tmvdl
           password: ${{ secrets.GITHUBDOCKER }}
 
-      - name: Pull app 
-        run: git clone git@github.com:brtmvdl/plus-www.git ./src/www
-
-      - name: Build app 
+      - name: Build www 
         run: docker-compose build www
 
       - name: Docker push
