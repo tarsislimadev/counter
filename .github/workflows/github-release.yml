@@ -25,7 +25,10 @@ jobs:
         run: docker-compose build app
 
       - name: Export app
-        run: docker run -v $(pwd)/dist:/dist -w /dist app cp /app/hello/platforms/android/app/build/outputs/apk/debug/*.apk . -rfv
+        run: docker run -v $(pwd)/dist:/dist -w /dist app cp /app/hello/platforms/android/app/build/outputs/*.apk . -rfv
+
+      - name: List files
+        run: ls -laR /dist
 
       - name: Create release
         run: gh release create v$( date +%Y%m%d%H%M ) ./dist/*.apk
