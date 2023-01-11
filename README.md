@@ -4,15 +4,9 @@
 
 A counter app
 
-## In development
+## Documentation
 
-```
-bash env/pull.sh
-
-bash env/install.sh
-
-bash env/up.sh
-```
+[Documentation](./docs/docs.md)
 
 ## License
 
