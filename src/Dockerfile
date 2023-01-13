@@ -4,8 +4,12 @@ RUN cordova telemetry off
 
 WORKDIR /app
 
-COPY ./www/build www
+RUN cordova create counter com.brtmvdl.counter counter
+
+WORKDIR /app/counter
+
+COPY www/html www
+
+RUN cordova platform add android
 
 RUN cordova build android
-
-CMD echo OK
