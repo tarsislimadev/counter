@@ -1,3 +1,13 @@
+FROM tmvdl/node:vercel
+
+WORKDIR /app
+
+COPY www .
+
+RUN npm run build
+
+RUN ls -la
+
 FROM tmvdl/android:ionic
 
 RUN cordova telemetry off
