@@ -2,7 +2,7 @@ name: Docker pull
 
 on:
   schedule:
-    - cron: '15 * * * *'
+    - cron: '50 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -11,4 +11,4 @@ jobs:
     steps:
       - 
         name: Pull docker image
-        run: docker pull tmvdl/projects:sucht
+        run: docker pull tmvdl/projects -a

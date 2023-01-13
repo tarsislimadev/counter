@@ -19,8 +19,8 @@ jobs:
           username: tmvdl
           password: ${{ secrets.GITHUBDOCKER }}
 
-      - name: Build www 
+      - name: Docker build
         run: docker-compose build www
 
       - name: Docker push
-        run: docker push tmvdl/projects:plus
+        run: docker push tmvdl/projects -a
