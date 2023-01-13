@@ -15,19 +15,13 @@ jobs:
       - name: Check out
         uses: actions/checkout@v3
 
-      - name: Install www
-        run: docker-compose run www npm i
-
-      - name: Build www
-        run: docker-compose run www npm run build
-
-      - name: Build app
-        run: docker-compose build app
+      - name: Docker build
+        run: docker-compose build github-release
 
       - name: Export app
-        run: docker run -v $(pwd)/dist:/dist -w /dist app cp ./platforms/android/app/build/outputs/*.apk . -rfv
+        run: docker run -v $(pwd)/dist:/dist github-release cp -rfv ./platforms/android/app/build/outputs/apk/debug/app-debug.apk /dist
 
       - name: Create release
-        run: gh release create v$( date +%Y%m%d%H%M ) ./dist/*.apk
+        run: gh release create v$( date +%Y%m%d%H%M ) ./dist/app-debug.apk
         env:
             GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
