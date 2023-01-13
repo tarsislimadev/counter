@@ -1,4 +1,4 @@
-FROM tmvdl/node
+FROM tmvdl/node:vercel
 
 WORKDIR /app
 
