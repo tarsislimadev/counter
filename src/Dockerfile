@@ -1,4 +1,4 @@
-FROM tmvdl/node:vercel
+FROM tmvdl/node:nextjs
 
 WORKDIR /app
 
