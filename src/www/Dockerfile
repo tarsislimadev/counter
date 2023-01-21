@@ -1,4 +1,4 @@
-FROM tmvdl/node:vercel
+FROM tmvdl/android:react-native
 
 WORKDIR /app
 

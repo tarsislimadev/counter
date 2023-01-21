@@ -1,4 +1,4 @@
-FROM tmvdl/node:nextjs
+FROM tmvdl/android:react-native
 
 WORKDIR /app
 
