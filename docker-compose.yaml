@@ -3,7 +3,7 @@ version: '3'
 services:
 
   www:
-    image: 'tmvdl/projects:plus'
+    image: 'tmvdl/projects:counter'
     restart: 'always'
     build: './src/www'
     volumes:
@@ -11,8 +11,8 @@ services:
     ports:
       - '80:3000'
 
-  app:
-    image: 'app'
+  docker-push:
+    image: 'docker-push'
     build: './src'
 
   github-release:

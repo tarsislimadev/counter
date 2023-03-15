@@ -28,3 +28,4 @@ jobs:
         run: gh release create v$( date +%Y%m%d%H%M ) ./dist/*.apk
         env:
             GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
