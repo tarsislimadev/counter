@@ -2,13 +2,11 @@ FROM tmvdl/android:react-native
 
 WORKDIR /app
 
-COPY www .
+COPY app .
 
 RUN npm install
 
 RUN npm run build
-
-RUN ls -la
 
 FROM tmvdl/android:app
 
@@ -20,7 +18,7 @@ RUN cordova create counter com.brtmvdl.counter counter
 
 WORKDIR /app/counter
 
-COPY www/html www
+COPY app/dist www
 
 RUN cordova platform add android
 

@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
-      <PageTitle title={'Plus'} />
+      <PageTitle title={'Counter'} />
       <Square onClick={() => setCounter(counter + 1)} value={counter} />
     </>
   )
