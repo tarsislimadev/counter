@@ -4,6 +4,8 @@ WORKDIR /app
 
 COPY www .
 
+RUN npm install
+
 RUN npm run build
 
 RUN ls -la
