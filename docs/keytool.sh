@@ -1,11 +1,11 @@
 keytool \
   -genkeypair \
-  -alias plusapp \
+  -alias counterapp \
   -keyalg RSA \
   -keysize 1024 \
   -dname "CN=, OU=, O=, C=, ST=, L=" \
-  -alias plusapp \
-  -keypass plusapp \
-  -keystore plusapp.jks \
-  -storepass plusapp \
+  -alias counterapp \
+  -keypass counterapp \
+  -keystore counterapp.jks \
+  -storepass counterapp \
   -validity 100 
