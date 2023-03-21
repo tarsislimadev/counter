@@ -1,4 +1,4 @@
-FROM tmvdl/android:react-native
+FROM tmvdl/android:react-native as react
 
 WORKDIR /app
 
@@ -8,7 +8,7 @@ RUN npm install
 
 RUN npm run build
 
-FROM tmvdl/android:app
+FROM tmvdl/android:ionic
 
 RUN cordova telemetry off
 
@@ -18,7 +18,7 @@ RUN cordova create counter com.brtmvdl.counter counter
 
 WORKDIR /app/counter
 
-COPY app/dist www
+COPY --from=react app/dist www
 
 RUN cordova platform add android
 
