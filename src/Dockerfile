@@ -8,6 +8,8 @@ RUN npm install
 
 RUN npm run build
 
+RUN ls -la
+
 FROM tmvdl/android:ionic
 
 RUN cordova telemetry off
