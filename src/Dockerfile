@@ -8,7 +8,7 @@ RUN npm install
 
 RUN npm run build
 
-RUN ls -la
+# RUN ls -la
 
 FROM tmvdl/android:ionic
 
@@ -20,7 +20,7 @@ RUN cordova create counter com.brtmvdl.counter counter
 
 WORKDIR /app/counter
 
-COPY --from=react app/dist www
+COPY --from=react app/build www
 
 RUN cordova platform add android
 
