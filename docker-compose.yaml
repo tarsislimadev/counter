@@ -1,10 +1,7 @@
 version: '3'
 
 services:
-
   app:
-    image: 'tmvdl/projects:counter'
-    restart: 'always'
     build: './src/app'
     volumes:
       - './src/app:/app'
@@ -12,9 +9,13 @@ services:
       - '8080:80'
 
   docker-push:
-    image: 'docker-push'
-    build: './src'
+    image: 'tmvdl/projects:counter'
+    build: 
+      context: './src'
+      dockerfile: 'Dockerfile.nginx'
 
   github-release:
     image: 'github-release'
-    build: './src'
+    build: 
+      context: './src'
+      dockerfile: 'Dockerfile.ionic'
