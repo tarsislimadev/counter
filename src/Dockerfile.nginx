@@ -1,5 +1,3 @@
 FROM nginx:stable
 
-WORKDIR /usr/share/nginx/html/
-
-COPY ./app/build www
+COPY ./app/build /usr/share/nginx/html
