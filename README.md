@@ -4,9 +4,17 @@
 
 A counter app
 
-## Documentation
+## How to
 
-[Documentation](./docs/docs.md)
+```
+bash env/install.sh
+
+bash env/up.sh app
+```
+
+```
+docker run -p 8080:80 tmvdl/projects:counter
+```
 
 ## License
 
